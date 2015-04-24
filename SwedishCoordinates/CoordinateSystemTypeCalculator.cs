@@ -9,6 +9,11 @@
                 return CoordinateSystemType.Sweref99;
             }
 
+            if (lat > 55 && lat < 70 && lng > 10.9 && lng < 24.3)
+            {
+                return CoordinateSystemType.Wgs84;
+            }
+
             return CoordinateSystemType.RT90;
         }
     }

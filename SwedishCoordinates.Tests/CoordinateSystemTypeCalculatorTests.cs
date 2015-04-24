@@ -20,6 +20,12 @@ namespace SwedishCoordinates.Tests
         [TestCase(7046077.605, 562140.337, Result = CoordinateSystemType.Sweref99)]
         [TestCase(6669189.376, 486557.055, Result = CoordinateSystemType.Sweref99)]
         [TestCase(6246136.458, 430374.835, Result = CoordinateSystemType.Sweref99)]
+
+        [TestCase(58.887857, 10.929260, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(55.306522, 13.321236, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(59.458372, 19.654854, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(65.822498, 24.159249, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(69.059755, 20.547493, Result = CoordinateSystemType.Wgs84)]
         public CoordinateSystemType GetCoordinateSystemType(double lat, double lng)
         {
             return new CoordinateSystemTypeCalculator().GetCoordinateSystemType(lat, lng);
