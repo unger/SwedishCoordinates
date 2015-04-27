@@ -18,56 +18,44 @@ namespace SwedishCoordinates.Tests
             57.633573,11.909510         
          */
 
-        [TestCase(1325761.0, 11.909510)]
+        [TestCase(1325761d, 11.909510d)]
         public void XToLongitude(double x, double expectedLng)
         {
             var lng = new SphericalMercatorCalculator().XToLongitude(x);
 
-            Assert.Less(Math.Abs(lng - expectedLng), 0.00001);
+            Assert.Less(Math.Abs(lng - expectedLng), 0.000005);
+            //Assert.AreEqual(expectedLng, lng);
         }
 
-        [TestCase(11.909510, 1325761.0)]
+        [TestCase(11.909510d, 1325761d)]
         public void LongitudeToX(double lng, double expectedX)
         {
             var x = new SphericalMercatorCalculator().LongitudeToX(lng);
 
-            Assert.Less(Math.Abs(x - expectedX), 0.5);
+            //Assert.Less(Math.Abs(x - expectedX), 0.5);
+            Assert.AreEqual(expectedX, x);
         }
 
-        [TestCase(7890733.0, 57.633573)]
+        [TestCase(7890733d, 57.633573d)]
         public void YToLatitude(double y, double expectedLat)
         {
             var lat = new SphericalMercatorCalculator().YToLatitude(y);
 
-            Assert.Less(Math.Abs(lat - expectedLat), 0.00001);
+            Assert.Less(Math.Abs(lat - expectedLat), 0.000005);
+            //Assert.AreEqual(expectedLat, lat);
         }
 
-        [TestCase(57.633573, 7890733.0)]
+        [TestCase(57.633573d, 7890733d)]
+        [TestCase(57.633572d, 7890733d)]
+        [TestCase(57.633571d, 7890733d)]
+        [TestCase(57.633570d, 7890733d)]
+        [TestCase(57.633569d, 7890733d)]
         public void LatitudeToY(double lat, double expectedY)
         {
             var y = new SphericalMercatorCalculator().LatitudeToY(lat);
 
-            Assert.Less(Math.Abs(y - expectedY), 0.4);
-        }
-
-        [TestCase(57.633573)]
-        [TestCase(11.909510)]
-        public void LatitudeToY_YToLatitude(double lat)
-        {
-            var calc = new SphericalMercatorCalculator();
-            var newLat = calc.YToLatitude(calc.LatitudeToY(lat));
-
-            Assert.Less(Math.Abs(lat - newLat), 0.0000000000001);
-        }
-
-        [TestCase(7890733.0)]
-        [TestCase(1325761.0)]
-        public void YToLatitude_LatitudeToY(double y)
-        {
-            var calc = new SphericalMercatorCalculator();
-            var newY = calc.LatitudeToY(calc.YToLatitude(y));
-
-            Assert.Less(Math.Abs(y - newY), 0.0000001);
+            //Assert.Less(Math.Abs(y - expectedY), 0.4);
+            Assert.AreEqual(expectedY, y);
         }
     }
 }
