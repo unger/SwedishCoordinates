@@ -4,17 +4,44 @@
     {
         public CoordinateSystemType GetCoordinateSystemType(double lat, double lng)
         {
-            if (lng > 430000.0 && lng < 770000.0)
+            if (lng >= CoordinateConst.Sweref99LongitudeMin &&
+                lng <= CoordinateConst.Sweref99LongitudeMax)
             {
                 return CoordinateSystemType.Sweref99;
             }
 
-            if (lat > 55 && lat < 70 && lng > 10.9 && lng < 24.3)
+            if (lat >= CoordinateConst.Wgs84LatitudeMin && 
+                lat <= CoordinateConst.Wgs84LatitudeMax &&
+                lng >= CoordinateConst.Wgs84LongitudeMin &&
+                lng <= CoordinateConst.Wgs84LongitudeMax)
             {
                 return CoordinateSystemType.Wgs84;
             }
 
-            return CoordinateSystemType.RT90;
+            if (lat > CoordinateConst.Rt90LatitudeMax)
+            {
+                return CoordinateSystemType.WebMercator;
+            }
+
+            if (lat < CoordinateConst.WebMercatorLatitudeMin &&
+                lat >= CoordinateConst.Rt90LatitudeMin)
+            {
+                return CoordinateSystemType.RT90;
+            } 
+
+            if (lng > CoordinateConst.Rt90LongitudeMax &&
+                lng <= CoordinateConst.WebMercatorLongitudeMax)
+            {
+                return CoordinateSystemType.WebMercator;
+            }
+
+            if (lng < CoordinateConst.WebMercatorLongitudeMin &&
+                lng >= CoordinateConst.Rt90LongitudeMin)
+            {
+                return CoordinateSystemType.RT90;
+            }
+
+            return CoordinateSystemType.Undefined;
         }
     }
 }

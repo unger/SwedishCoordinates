@@ -28,6 +28,13 @@ namespace SwedishCoordinates.Tests
         }
 
         [TestCase(11.909510d, 1325761d)]
+        [TestCase(11.909512d, 1325761d)]
+        [TestCase(11.909513d, 1325761d)]
+        [TestCase(11.909514d, 1325761d)]
+        [TestCase(11.909515d, 1325761d)]
+        [TestCase(11.909516d, 1325761d)]
+        [TestCase(11.909517d, 1325761d)]
+        [TestCase(11.909518d, 1325761d)]
         public void LongitudeToX(double lng, double expectedX)
         {
             var x = new SphericalMercatorCalculator().LongitudeToX(lng);
