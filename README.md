@@ -4,6 +4,12 @@ Convert coordinates between different Swedish coordinate systems, RT90, SWEREF99
 
 Based on https://github.com/bjornsallarp/MightyLittleGeodesy
 
+##Installation
+
+http://nuget.org/packages/SwedishCoordinates/
+
+    Install-Package SwedishCoordinates
+
 ##Example usage
 
 Convert between RT90 and WGS84
