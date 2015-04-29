@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SwedishCoordinates")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Convert coordinates between different Swedish coordinate systems, RT90, SWEREF99, WGS84, Web/Spherical Mercator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SwedishCoordinates")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Magnus Unger 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
