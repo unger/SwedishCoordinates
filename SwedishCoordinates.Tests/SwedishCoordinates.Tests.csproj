@@ -45,7 +45,7 @@
     <Compile Include="CoordinateSystemTypeCalculatorTests.cs" />
     <Compile Include="PositionConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SphericalMercatorCalculatorTests.cs" />
+    <Compile Include="WebMercatorCalculatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

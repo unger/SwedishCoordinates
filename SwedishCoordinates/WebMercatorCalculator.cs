@@ -2,11 +2,11 @@
 {
     using System;
 
-    public class SphericalMercatorCalculator
+    public class WebMercatorCalculator
     {
         private const double EarthRadius = 6378137;
 
-        public SphericalMercatorCalculator()
+        public WebMercatorCalculator()
         {
             this.Rounding = MidpointRounding.AwayFromZero;
         }

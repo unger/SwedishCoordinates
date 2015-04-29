@@ -89,7 +89,7 @@ namespace SwedishCoordinates.Tests
         [TestCase(7670775, 1878314, Result = CoordinateSystemType.Undefined)] // Inconclusive with RT90 position
         public CoordinateSystemType GetCoordinateSystemType(double lat, double lng)
         {
-            var calc = new SphericalMercatorCalculator();
+            var calc = new WebMercatorCalculator();
             var str = calc.LatitudeToY(lat) + "," + calc.LongitudeToX(lng);
             return new CoordinateSystemTypeCalculator().GetCoordinateSystemType(lat, lng);
         }

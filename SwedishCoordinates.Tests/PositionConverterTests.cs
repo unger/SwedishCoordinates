@@ -77,17 +77,6 @@
             Assert.AreEqual(Math.Round(expectedLat, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Latitude, decimals, MidpointRounding.AwayFromZero));
             Assert.AreEqual(Math.Round(expectedLng, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Longitude, decimals, MidpointRounding.AwayFromZero));
         }
-/*
-A: x = 7453389.762 m y = 1727060.905 m
-B: x = 7047738.415 m y = 1522128.637 m
-C: x = 6671665.273 m y = 1441843.186 m
-D: x = 6249111.351 m y = 1380573.079 m 
-
-A: x = 7454204.638 m y = 761811.242 m 
-B: x = 7046077.605 m y = 562140.337 m 
-C: x = 6669189.376 m y = 486557.055 m
-D: x = 6246136.458 m y = 430374.835 m
-    */
 
         [TestCase(7453389.762, 1727060.905, 7454204.638, 761811.242, 3)]    // Kontrollpunkt A Lantmäteriet
         [TestCase(7047738.415, 1522128.637, 7046077.605, 562140.337, 3)]    // Kontrollpunkt B Lantmäteriet
@@ -143,7 +132,7 @@ D: x = 6246136.458 m y = 430374.835 m
             Assert.AreEqual(Math.Round(expectedLng, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Longitude, decimals, MidpointRounding.AwayFromZero));
         }
 
-        [TestCase(57.633573, 11.909510, 7890733.208, 1325760.532, 0)]            // Välen, Göteborg
+        [TestCase(57.633573, 11.909510, 7890733, 1325761, 0)]            // Välen, Göteborg
         public void ToWebMercator_FromWgs84(double lat, double lng, double expectedLat, double expectedLng, int decimals)
         {
             var pos = new WGS84Position(lat, lng);
