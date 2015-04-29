@@ -26,7 +26,7 @@
             if (lat < CoordinateConst.WebMercatorLatitudeMin &&
                 lat >= CoordinateConst.Rt90LatitudeMin)
             {
-                return CoordinateSystemType.RT90;
+                return CoordinateSystemType.Rt90;
             } 
 
             if (lng > CoordinateConst.Rt90LongitudeMax &&
@@ -38,7 +38,7 @@
             if (lng < CoordinateConst.WebMercatorLongitudeMin &&
                 lng >= CoordinateConst.Rt90LongitudeMin)
             {
-                return CoordinateSystemType.RT90;
+                return CoordinateSystemType.Rt90;
             }
 
             return CoordinateSystemType.Undefined;

@@ -49,14 +49,14 @@ namespace SwedishCoordinates.Tests
          */
 
         // RT90 Test Cases
-        [TestCase(6539796, 1219001, Result = CoordinateSystemType.RT90)]
-        [TestCase(6133534, 1342266, Result = CoordinateSystemType.RT90)]
-        [TestCase(6599414, 1718236, Result = CoordinateSystemType.RT90)]
-        [TestCase(7327815, 1881063, Result = CoordinateSystemType.RT90)]
+        [TestCase(6539796, 1219001, Result = CoordinateSystemType.Rt90)]
+        [TestCase(6133534, 1342266, Result = CoordinateSystemType.Rt90)]
+        [TestCase(6599414, 1718236, Result = CoordinateSystemType.Rt90)]
+        [TestCase(7327815, 1881063, Result = CoordinateSystemType.Rt90)]
         [TestCase(7670775, 1689086, Result = CoordinateSystemType.Undefined)] // Inconclusive with WebMercator position
-        [TestCase(7291923, 1439110, Result = CoordinateSystemType.RT90)]
-        [TestCase(6275247, 1439110, Result = CoordinateSystemType.RT90)]
-        [TestCase(6275247, 1565594, Result = CoordinateSystemType.RT90)]
+        [TestCase(7291923, 1439110, Result = CoordinateSystemType.Rt90)]
+        [TestCase(6270828, 1439110, Result = CoordinateSystemType.Rt90)]
+        [TestCase(6270828, 1565594, Result = CoordinateSystemType.Rt90)]
 
         // SWEREF99 Test Cases
         [TestCase(6534702, 265458, Result = CoordinateSystemType.Sweref99)]
@@ -65,8 +65,8 @@ namespace SwedishCoordinates.Tests
         [TestCase(7330648, 917405, Result = CoordinateSystemType.Sweref99)]
         [TestCase(7671027, 721007, Result = CoordinateSystemType.Sweref99)]
         [TestCase(7289089, 476058, Result = CoordinateSystemType.Sweref99)]
-        [TestCase(6274430, 337417, Result = CoordinateSystemType.Sweref99)]
-        [TestCase(6274430, 615001, Result = CoordinateSystemType.Sweref99)]
+        [TestCase(6270013, 337417, Result = CoordinateSystemType.Sweref99)]
+        [TestCase(6270013, 615001, Result = CoordinateSystemType.Sweref99)]
 
         // Wgs84 Test Cases
         [TestCase(58.887857, 10.929260, Result = CoordinateSystemType.Wgs84)]
@@ -75,8 +75,8 @@ namespace SwedishCoordinates.Tests
         [TestCase(65.822498, 24.159249, Result = CoordinateSystemType.Wgs84)]
         [TestCase(69.059755, 20.547493, Result = CoordinateSystemType.Wgs84)]
         [TestCase(65.722594, 14.478164, Result = CoordinateSystemType.Wgs84)]
-        [TestCase(56.600000, 12.346816, Result = CoordinateSystemType.Wgs84)]
-        [TestCase(56.600000, 16.873183, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(56.560306, 12.346816, Result = CoordinateSystemType.Wgs84)]
+        [TestCase(56.560306, 16.873183, Result = CoordinateSystemType.Wgs84)]
 
         // WebMercator Test Cases
         [TestCase(8156188, 1224086, Result = CoordinateSystemType.WebMercator)]
@@ -85,8 +85,8 @@ namespace SwedishCoordinates.Tests
         [TestCase(9828434, 2772825, Result = CoordinateSystemType.WebMercator)]
         [TestCase(10769373, 2338003, Result = CoordinateSystemType.WebMercator)]
         [TestCase(9801332, 1611702, Result = CoordinateSystemType.WebMercator)]
-        [TestCase(7678798, 1374441, Result = CoordinateSystemType.WebMercator)]
-        [TestCase(7678798, 1878314, Result = CoordinateSystemType.WebMercator)]
+        [TestCase(7670775, 1374441, Result = CoordinateSystemType.Undefined)] // Inconclusive with RT90 position
+        [TestCase(7670775, 1878314, Result = CoordinateSystemType.Undefined)] // Inconclusive with RT90 position
         public CoordinateSystemType GetCoordinateSystemType(double lat, double lng)
         {
             var calc = new SphericalMercatorCalculator();

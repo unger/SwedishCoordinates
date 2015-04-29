@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SwedishCoordinates.Tests
+﻿namespace SwedishCoordinates.Tests
 {
+    using System;
+
     using NUnit.Framework;
 
     [TestFixture]
@@ -39,8 +35,8 @@ namespace SwedishCoordinates.Tests
         {
             var x = new SphericalMercatorCalculator().LongitudeToX(lng);
 
-            //Assert.Less(Math.Abs(x - expectedX), 0.5);
-            Assert.AreEqual(expectedX, x);
+            Assert.Less(Math.Abs(x - expectedX), 0.5);
+            //Assert.AreEqual(expectedX, x);
         }
 
         [TestCase(7890733d, 57.633573d)]
@@ -59,7 +55,7 @@ namespace SwedishCoordinates.Tests
         [TestCase(57.633569d, 7890733d)]
         public void LatitudeToY(double lat, double expectedY)
         {
-            var y = new SphericalMercatorCalculator().LatitudeToY(lat);
+            var y = new SphericalMercatorCalculator().LatitudeToY(lat, 0);
 
             //Assert.Less(Math.Abs(y - expectedY), 0.4);
             Assert.AreEqual(expectedY, y);
