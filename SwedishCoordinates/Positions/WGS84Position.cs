@@ -52,10 +52,8 @@ namespace SwedishCoordinates.Positions
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
         public WGS84Position(double latitude, double longitude)
-            : base(Grid.WGS84)
+            : base(latitude, longitude, Grid.WGS84)
         {
-            this.Latitude = latitude;
-            this.Longitude = longitude;
         }
 
         /// <summary>

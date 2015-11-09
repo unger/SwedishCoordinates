@@ -10,8 +10,8 @@ namespace SwedishCoordinates.Positions
 
     public class WebMercatorPosition : Position
     {
-        public WebMercatorPosition(double x, double y)
-            : base(x, y, Grid.WebMercator)
+        public WebMercatorPosition(double y, double x)
+            : base(y, x, Grid.WebMercator)
         {
         }
     }
