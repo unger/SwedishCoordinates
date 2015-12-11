@@ -37,7 +37,7 @@ namespace SwedishCoordinates.Classes
     {
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public Grid GridFormat { get; set; }
+        public Grid GridFormat { get; private set; }
 
         public Position(double lat, double lon, Grid format)
         {

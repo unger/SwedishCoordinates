@@ -1,4 +1,6 @@
-﻿namespace SwedishCoordinates.Tests
+﻿using SwedishCoordinates.Classes;
+
+namespace SwedishCoordinates.Tests
 {
     using System;
 
@@ -137,6 +139,16 @@
         {
             var pos = new WGS84Position(lat, lng);
             var converted = PositionConverter.ToWebMercator(pos);
+
+            Assert.AreEqual(Math.Round(expectedLat, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Latitude, decimals, MidpointRounding.AwayFromZero));
+            Assert.AreEqual(Math.Round(expectedLng, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Longitude, decimals, MidpointRounding.AwayFromZero));
+        }
+
+        [TestCase(57.633573, 11.909510, 7890733, 1325761, 0)]            // Välen, Göteborg
+        public void ToWebMercator_FromPosition(double lat, double lng, double expectedLat, double expectedLng, int decimals)
+        {
+            Position pos = new WGS84Position(lat, lng);
+            var converted = pos.ToWebMercator();
 
             Assert.AreEqual(Math.Round(expectedLat, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Latitude, decimals, MidpointRounding.AwayFromZero));
             Assert.AreEqual(Math.Round(expectedLng, decimals, MidpointRounding.AwayFromZero), Math.Round(converted.Longitude, decimals, MidpointRounding.AwayFromZero));

@@ -100,13 +100,11 @@ namespace SwedishCoordinates.Positions
             WGS84Position newPos = new WGS84Position()
             {
                 Latitude = lat_lon[0],
-                Longitude = lat_lon[1],
-                GridFormat = Grid.WGS84
+                Longitude = lat_lon[1]
             };
 
             return newPos;
         }
-
 
         private string GetProjectionString(SWEREFProjection projection)
         {
