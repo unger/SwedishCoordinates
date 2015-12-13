@@ -43,6 +43,7 @@
     <Compile Include="CoordinateSystemType.cs" />
     <Compile Include="CoordinateSystemTypeCalculator.cs" />
     <Compile Include="PositionConverter.cs" />
+    <Compile Include="PositionExtensions.cs" />
     <Compile Include="Positions\RT90Position.cs" />
     <Compile Include="Positions\SWEREF99Position.cs" />
     <Compile Include="Positions\WebMercatorPosition.cs" />
